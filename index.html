@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jangam Manikantaiah | Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; }
+    h1 { font-size: 2.5rem; }
+    h2 { margin-top: 2rem; color: #1d4ed8; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .contact input, .contact textarea { width: 100%; padding: 10px; margin: 5px 0; }
+    .contact button { background: #2563eb; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    footer { margin-top: 3rem; text-align: center; font-size: 0.9rem; color: #777; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Jangam Manikantaiah</h1>
+    <p>Motivated and curious Computer Science undergraduate | Software Engineer Aspirant</p>
+    <p>
+      <a href="mailto:jangammanikanta45@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/manikantaiah-jangam-44729932a" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/Manikantaiah-jangam" target="_blank">GitHub</a> |
+      <a href="resume.pdf" download>Resume</a>
+    </p>
+
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Java, Python, C, JavaScript</li>
+      <li><strong>Web Technologies:</strong> HTML, CSS</li>
+      <li><strong>Databases:</strong> MySQL</li>
+      <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Eclipse</li>
+      <li><strong>Operating Systems:</strong> Windows, Linux</li>
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+      <li><strong>B.Tech in Computer Science and Design</strong> - Santhiram Engineering College, Nandyal (2022-2026) | CGPA: 7.60</li>
+      <li><strong>Intermediate - MPC</strong> - SMT Theresa Jr. College, Atmakur (2020–2022) | Marks: 632/1000</li>
+      <li><strong>SSC</strong> - Sri Guru Raja E.M High School, Nandyal (2019–2020) | GPA: 9.9</li>
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+      <li>Java Full Stack Web Development - AICTE Eduskills</li>
+      <li>Web Development - AICTE Eduskills</li>
+      <li>AI-Data Quality Analyst - PMKVY</li>
+    </ul>
+
+    <h2>Projects</h2>
+    <p><strong>Ecommerce Website for Electronic Devices</strong><br>
+    Basic shopping website with login, search/filter, checkout, and payment.<br>
+    <a href="https://github.com/users/Manikantaiah-jangam/projects/1" target="_blank">View Project</a></p>
+
+    <h2>Contact Me</h2>
+    <form class="contact" onsubmit="alert('Message sent!'); return false;">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <footer>
+      &copy; <span id="year"></span> Jangam Manikantaiah. All rights reserved.
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
