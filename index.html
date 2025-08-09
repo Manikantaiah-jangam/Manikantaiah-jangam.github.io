@@ -5,36 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jangam Manikantaiah | Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; margin: 0; padding: 20px; }
-    .container { max-width: 800px; margin: auto; }
-    h1 { font-size: 2.5rem; }
-    h2 { margin-top: 2rem; color: #1d4ed8; }
-    a { color: #2563eb; text-decoration: none; }
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --accent-color: #2563eb;
+      --card-bg: #fff;
+    }
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #ddd;
+      --card-bg: #2b2b2b;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: var(--accent-color);
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
     a:hover { text-decoration: underline; }
-    .contact input, .contact textarea { width: 100%; padding: 10px; margin: 5px 0; }
-    .contact button { background: #2563eb; color: white; padding: 10px 20px; border: none; cursor: pointer; }
-    footer { margin-top: 3rem; text-align: center; font-size: 0.9rem; color: #777; }
+    .skills li {
+      margin: 10px 0;
+    }
+    .skill-bar {
+      height: 8px;
+      background: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: var(--accent-color);
+      width: 0;
+      transition: width 1s ease-in-out;
+    }
+    .contact input, .contact textarea {
+      width: 100%; padding: 10px; margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact button {
+      background: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .contact button:hover {
+      background: #1d4ed8;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .dark-mode-toggle {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #555;
+      height: 1.4rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Jangam Manikantaiah</h1>
-    <p>Motivated and curious Computer Science undergraduate | Software Engineer Aspirant</p>
+    <header>
+      <div>
+        <h1>Jangam Manikantaiah</h1>
+        <p class="tagline"></p>
+      </div>
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    </header>
+
     <p>
       <a href="mailto:jangammanikanta45@gmail.com">Email</a> |
       <a href="https://www.linkedin.com/in/manikantaiah-jangam-44729932a" target="_blank">LinkedIn</a> |
       <a href="https://github.com/Manikantaiah-jangam" target="_blank">GitHub</a> |
-      <a href="Manikantaiah-jangam.github.io
-/Resume.pdf" download>Resume</a>
+      <a href="resume.pdf" download>Resume</a>
     </p>
 
     <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Java, Python, C, JavaScript</li>
-      <li><strong>Web Technologies:</strong> HTML, CSS</li>
-      <li><strong>Databases:</strong> MySQL</li>
-      <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Eclipse</li>
-      <li><strong>Operating Systems:</strong> Windows, Linux</li>
+    <ul class="skills">
+      <li><strong>Java</strong>
+        <div class="skill-bar"><div class="skill-fill" data-skill="80"></div></div>
+      </li>
+      <li><strong>Python</strong>
+        <div class="skill-bar"><div class="skill-fill" data-skill="85"></div></div>
+      </li>
+      <li><strong>JavaScript</strong>
+        <div class="skill-bar"><div class="skill-fill" data-skill="70"></div></div>
+      </li>
+      <li><strong>HTML & CSS</strong>
+        <div class="skill-bar"><div class="skill-fill" data-skill="90"></div></div>
+      </li>
     </ul>
 
     <h2>Education</h2>
@@ -57,10 +152,10 @@
     <a href="https://github.com/users/Manikantaiah-jangam/projects/1" target="_blank">View Project</a></p>
 
     <h2>Contact Me</h2>
-    <form class="contact" onsubmit="alert('Message sent!'); return false;">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
+    <form class="contact" id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
 
@@ -68,8 +163,58 @@
       &copy; <span id="year"></span> Jangam Manikantaiah. All rights reserved.
     </footer>
   </div>
+
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    // Typing effect for tagline
+    const taglineText = "Motivated and curious Computer Science undergraduate | Software Engineer Aspirant";
+    let index = 0;
+    function typeTagline() {
+      if (index < taglineText.length) {
+        document.querySelector('.tagline').textContent += taglineText.charAt(index);
+        index++;
+        setTimeout(typeTagline, 50);
+      }
+    }
+    typeTagline();
+
+    // Animate skill bars
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-fill').forEach(bar => {
+        const width = bar.getAttribute('data-skill');
+        setTimeout(() => { bar.style.width = width + "%"; }, 300);
+      });
+    });
+
+    // Contact form validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let name = document.getElementById('name').value.trim();
+      let email = document.getElementById('email').value.trim();
+      let message = document.getElementById('message').value.trim();
+
+      if (name.length < 3) {
+        alert("Name must be at least 3 characters.");
+        return;
+      }
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Enter a valid email.");
+        return;
+      }
+      if (message.length < 10) {
+        alert("Message must be at least 10 characters.");
+        return;
+      }
+      alert("Message sent successfully!");
+      this.reset();
+    });
   </script>
 </body>
 </html>
