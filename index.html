@@ -6,126 +6,121 @@
   <title>Jangam Manikantaiah | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #f8fafc;
-      margin: 0;
-      padding: 0;
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    header { text-align: center; padding: 40px 0; }
+    h1 { font-size: 3rem; background: linear-gradient(90deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    p.tagline { font-size: 1.2rem; color: #94a3b8; margin-top: 10px; }
+    nav { text-align: center; margin-top: 20px; }
+    nav a { color: #94a3b8; margin: 0 15px; font-weight: bold; text-decoration: none; transition: color 0.3s; }
+    nav a:hover { color: #60a5fa; }
+    section { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    h2 { font-size: 2rem; margin-bottom: 20px; color: #60a5fa; }
+    ul { list-style: none; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    a.btn { display: inline-block; padding: 10px 20px; background: #2563eb; color: white; border-radius: 5px; text-decoration: none; margin-top: 10px; transition: background 0.3s; }
+    a.btn:hover { background: #1e40af; }
+    .contact input, .contact textarea {
+      width: 100%; padding: 12px; margin: 8px 0;
+      border: none; border-radius: 5px; outline: none;
     }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
+    .contact button {
+      background: #2563eb; color: white;
+      padding: 10px 20px; border: none; border-radius: 5px;
+      cursor: pointer; font-size: 1rem;
     }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 5px;
-      color: #38bdf8;
-    }
-
-    p.tagline {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #94a3b8;
-    }
-
+    .contact button:hover { background: #1e40af; }
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #94a3b8; }
+    
+    /* Social Icons */
     .social-links {
-      margin-bottom: 30px;
+      margin-top: 20px;
     }
-
     .social-links a {
       display: inline-block;
       margin: 0 10px;
       font-size: 1.5rem;
-      color: #f8fafc;
+      color: #94a3b8;
       transition: transform 0.3s ease, color 0.3s ease;
     }
-
     .social-links a:hover {
       transform: scale(1.2);
-      color: #38bdf8;
+      color: #60a5fa;
     }
 
-    h2 {
-      color: #38bdf8;
-      margin-top: 40px;
-      border-bottom: 2px solid #38bdf8;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      text-align: left;
-      max-width: 700px;
-      margin: auto;
-      padding-left: 20px;
-    }
-
-    li {
-      margin: 8px 0;
-      color: #e2e8f0;
-    }
-
-    .project {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 15px;
-      border-radius: 10px;
-      margin: 15px 0;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
+    /* Animation */
+    [data-animate] { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    [data-animate].visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Jangam Manikantaiah</h1>
-    <p class="tagline">Motivated and curious Computer Science undergraduate | Software Engineer Aspirant</p>
+    <header data-animate>
+      <h1>Jangam Manikantaiah</h1>
+      <p class="tagline">Motivated & Curious Computer Science Undergraduate | Aspiring Software Engineer</p>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="social-links">
+        <a href="tel:+91XXXXXXXXXX" title="Call"><i class="fas fa-phone"></i></a>
+        <a href="mailto:jangammanikanta45@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Manikantaiah-jangam" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/manikantaiah-jangam-44729932a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="resume.pdf" download title="Download Resume"><i class="fas fa-file-download"></i></a>
+      </div>
+    </header>
 
-    <div class="social-links">
-      <a href="tel:+91XXXXXXXXXX" title="Call"><i class="fas fa-phone"></i></a>
-      <a href="mailto:jangammanikanta45@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/Manikantaiah-jangam" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/manikantaiah-jangam-44729932a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="resume.pdf" download title="Download Resume"><i class="fas fa-file-download"></i></a>
-    </div>
+    <section id="skills" data-animate>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Java, Python, C, JavaScript</li>
+        <li><strong>Web Technologies:</strong> HTML, CSS</li>
+        <li><strong>Databases:</strong> MySQL</li>
+        <li><strong>Tools:</strong> Git, GitHub, VS Code, Eclipse</li>
+        <li><strong>OS:</strong> Windows, Linux</li>
+      </ul>
+    </section>
 
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Java, Python, C, JavaScript</li>
-      <li><strong>Web Technologies:</strong> HTML, CSS</li>
-      <li><strong>Databases:</strong> MySQL</li>
-      <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Eclipse</li>
-      <li><strong>Operating Systems:</strong> Windows, Linux</li>
-    </ul>
+    <section id="education" data-animate>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.Tech in CSD</strong> - Santhiram Engineering College (2022-2026) | CGPA: 7.60</li>
+        <li><strong>Intermediate (MPC)</strong> - SMT Theresa Jr. College (2020–2022) | 632/1000</li>
+        <li><strong>SSC</strong> - Sri Guru Raja E.M High School (2019–2020) | GPA: 9.9</li>
+      </ul>
+    </section>
 
-    <h2>Education</h2>
-    <ul>
-      <li><strong>B.Tech in Computer Science and Design</strong> - Santhiram Engineering College, Nandyal (2022-2026) | CGPA: 7.60</li>
-      <li><strong>Intermediate - MPC</strong> - SMT Theresa Jr. College, Atmakur (2020–2022) | Marks: 632/1000</li>
-      <li><strong>SSC</strong> - Sri Guru Raja E.M High School, Nandyal (2019–2020) | GPA: 9.9</li>
-    </ul>
+    <section id="certifications" data-animate>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Java Full Stack Web Development - AICTE Eduskills</li>
+        <li>Web Development - AICTE Eduskills</li>
+        <li>AI-Data Quality Analyst - PMKVY</li>
+      </ul>
+    </section>
 
-    <h2>Certifications</h2>
-    <ul>
-      <li>Java Full Stack Web Development - AICTE Eduskills</li>
-      <li>Web Development - AICTE Eduskills</li>
-      <li>AI-Data Quality Analyst - PMKVY</li>
-    </ul>
+    <section id="projects" data-animate>
+      <h2>Projects</h2>
+      <p><strong>Ecommerce Website for Electronic Devices</strong><br>
+        Basic shopping website with login, search/filter, checkout, and payment.<br>
+        <a class="btn" href="https://github.com/users/Manikantaiah-jangam/projects/1" target="_blank">View Project</a>
+      </p>
+    </section>
 
-    <h2>Projects</h2>
-    <div class="project">
-      <strong>Ecommerce Website for Electronic Devices</strong><br>
-      Basic shopping website with login, search/filter, checkout, and payment.<br>
-      <a href="https://github.com/users/Manikantaiah-jangam/projects/1" target="_blank" style="color:#38bdf8;">View Project</a>
-    </div>
+    <section id="contact" data-animate>
+      <h2>Contact Me</h2>
+      <form class="contact" onsubmit="alert('Message sent!'); return false;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
     <footer>
       &copy; <span id="year"></span> Jangam Manikantaiah. All rights reserved.
@@ -134,6 +129,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Animation on scroll
+    const elements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
