@@ -1,164 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jangam Manikantaiah | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    header { text-align: center; padding: 40px 0; }
+    h1 { font-size: 3rem; background: linear-gradient(90deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    p.tagline { font-size: 1.2rem; color: #94a3b8; margin-top: 10px; }
+    nav { text-align: center; margin-top: 20px; }
+    nav a { color: #94a3b8; margin: 0 15px; font-weight: bold; text-decoration: none; transition: color 0.3s; }
+    nav a:hover { color: #60a5fa; }
+    section { padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    h2 { font-size: 2rem; margin-bottom: 20px; color: #60a5fa; }
+    ul { list-style: none; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    a.btn { display: inline-block; padding: 10px 20px; background: #2563eb; color: white; border-radius: 5px; text-decoration: none; margin-top: 10px; transition: background 0.3s; }
+    a.btn:hover { background: #1e40af; }
+    .contact input, .contact textarea {
+      width: 100%; padding: 12px; margin: 8px 0;
+      border: none; border-radius: 5px; outline: none;
+    }
+    .contact button {
+      background: #2563eb; color: white;
+      padding: 10px 20px; border: none; border-radius: 5px;
+      cursor: pointer; font-size: 1rem;
+    }
+    .contact button:hover { background: #1e40af; }
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #94a3b8; }
+    /* Animation */
+    [data-animate] { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    [data-animate].visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header data-animate>
+      <h1>Jangam Manikantaiah</h1>
+      <p class="tagline">Motivated & Curious Computer Science Undergraduate | Aspiring Software Engineer</p>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
+    <section id="skills" data-animate>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Java, Python, C, JavaScript</li>
+        <li><strong>Web Technologies:</strong> HTML, CSS</li>
+        <li><strong>Databases:</strong> MySQL</li>
+        <li><strong>Tools:</strong> Git, GitHub, VS Code, Eclipse</li>
+        <li><strong>OS:</strong> Windows, Linux</li>
+      </ul>
+    </section>
 
-const socials = [
-  { href: 'mailto:jangammanikanta45@gmail.com', icon: <FiMail />, label: 'Email' },
-  { href: 'https://github.com/Manikantaiah-jangam', icon: <FiGithub />, label: 'GitHub' },
-  { href: 'https://www.linkedin.com/in/manikantaiah-jangam-44729932a', icon: <FiLinkedin />, label: 'LinkedIn' }
-];
+    <section id="education" data-animate>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.Tech in CSD</strong> - Santhiram Engineering College (2022-2026) | CGPA: 7.60</li>
+        <li><strong>Intermediate (MPC)</strong> - SMT Theresa Jr. College (2020–2022) | 632/1000</li>
+        <li><strong>SSC</strong> - Sri Guru Raja E.M High School (2019–2020) | GPA: 9.9</li>
+      </ul>
+    </section>
 
-const skills = [
-  { name: 'Python', level: 85 },
-  { name: 'Data Structures & Algorithms', level: 80 },
-  { name: 'Django', level: 75 },
-  { name: 'JavaScript', level: 78 },
-  { name: 'React.js', level: 72 },
-  { name: 'Git & GitHub', level: 80 }
-];
+    <section id="certifications" data-animate>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Java Full Stack Web Development - AICTE Eduskills</li>
+        <li>Web Development - AICTE Eduskills</li>
+        <li>AI-Data Quality Analyst - PMKVY</li>
+      </ul>
+    </section>
 
-const projects = [
-  {
-    title: 'E-commerce for Electronics',
-    desc: 'Full-stack basic e-commerce prototype with product listing, cart & checkout (mock). Backend: Django REST API.',
-    tech: ['Django', 'DRF', 'React', 'Stripe']
-  },
-  {
-    title: 'GetStego (Research Prototype)',
-    desc: 'Multimedia steganography web-tool concept: hide messages in images & audio. Focus on algorithms and security.',
-    tech: ['Python', 'Image Processing', 'Web UI']
-  }
-];
+    <section id="projects" data-animate>
+      <h2>Projects</h2>
+      <p><strong>Ecommerce Website for Electronic Devices</strong><br>
+        Basic shopping website with login, search/filter, checkout, and payment.<br>
+        <a class="btn" href="https://github.com/users/Manikantaiah-jangam/projects/1" target="_blank">View Project</a>
+      </p>
+    </section>
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors">
-      <header className="max-w-5xl mx-auto p-6 flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-extrabold">Jangam Manikantaiah</h1>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Motivated Computer Science undergraduate • Aspiring Software Engineer</p>
-        </div>
-        <nav className="flex gap-3 items-center">
-          {socials.map(s => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
-               className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-              <span className="text-xl">{s.icon}</span>
-            </a>
-          ))}
-        </nav>
-      </header>
+    <section id="contact" data-animate>
+      <h2>Contact Me</h2>
+      <form class="contact" onsubmit="alert('Message sent!'); return false;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
-      <main className="max-w-5xl mx-auto p-6 grid gap-8 md:grid-cols-3">
-        {/* Left column - About & Skills */}
-        <section className="md:col-span-1 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-            <h2 className="text-xl font-semibold mb-2">About</h2>
-            <p className="text-sm text-gray-700 dark:text-gray-300">I am a B.Tech Computer Science and Design student (2022-2026) building strong fundamentals in Python, DSA and Web Technologies. I enjoy solving algorithmic problems and learning secure communication techniques.</p>
+    <footer>
+      &copy; <span id="year"></span> Jangam Manikantaiah. All rights reserved.
+    </footer>
+  </div>
 
-            <h3 className="mt-4 font-semibold">Skills</h3>
-            <ul className="mt-2 space-y-3">
-              {skills.map(s => (
-                <li key={s.name}>
-                  <div className="flex justify-between mb-1 text-sm"><span>{s.name}</span><span>{s.level}%</span></div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                    <motion.div className="bg-blue-600 h-2 rounded-full" style={{ width: `${s.level}%` }} initial={{ width: 0 }} animate={{ width: `${s.level}%` }} transition={{ duration: 1 }} />
-                  </div>
-                </li>
-              ))}
-            </ul>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-            <h3 className="mt-6 font-semibold">Education</h3>
-            <p className="text-sm">B.Tech in Computer Science and Design — Santhiram Engineering College (2022-2026). CGPA: 7.60</p>
+    // Animation on scroll
+    const elements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
 
-          </motion.div>
-        </section>
-
-        {/* Right column - Projects & Contact spans two columns */}
-        <section className="md:col-span-2 space-y-6">
-          <motion.div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-            <h2 className="text-xl font-semibold mb-3">Projects</h2>
-            <div className="space-y-4">
-              {projects.map(p => (
-                <article key={p.title} className="p-4 border border-gray-100 dark:border-gray-700 rounded-md hover:shadow-lg transition">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold text-lg">{p.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{p.desc}</p>
-                    </div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{p.tech.join(' • ')}</div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}>
-            <h2 className="text-xl font-semibold mb-3">Practice & Preparation</h2>
-            <p className="text-sm text-gray-700 dark:text-gray-300">Focused practice for 2 months: daily DSA problems, Python exercises, and combined SSC CHSL & FBO topic reviews. Use the provided timetable and problem sets to build consistency.</p>
-
-            <div className="mt-4 grid sm:grid-cols-2 gap-3">
-              <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded">
-                <h4 className="font-medium">Daily Coding</h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400">1-2 coding problems per day. Start easy → medium → hard.</p>
-              </div>
-              <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded">
-                <h4 className="font-medium">Aptitude & Reasoning</h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400">30 minutes daily for SSC CHSL + FBO combined topics.</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}>
-            <h2 className="text-xl font-semibold mb-3">Contact</h2>
-            <ContactForm />
-          </motion.div>
-        </section>
-      </main>
-
-      <footer className="max-w-5xl mx-auto p-6 text-center text-sm text-gray-600 dark:text-gray-400">© {new Date().getFullYear()} Jangam Manikantaiah — All rights reserved.</footer>
-    </div>
-  );
-}
-
-function ContactForm() {
-  const [state, setState] = React.useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = React.useState('');
-
-  function handleChange(e) {
-    setState(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  }
-
-  function validateEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const { name, email, message } = state;
-    if (name.length < 2) return setStatus('Name too short');
-    if (!validateEmail(email)) return setStatus('Invalid email');
-    if (message.length < 10) return setStatus('Message too short');
-
-    // Simulate send — replace with real endpoint or email service (Formspree, Netlify forms, etc.)
-    setStatus('Sending...');
-    setTimeout(() => {
-      setStatus('Message sent — thank you!');
-      setState({ name: '', email: '', message: '' });
-    }, 800);
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <div className="grid sm:grid-cols-2 gap-3">
-        <input name="name" value={state.name} onChange={handleChange} placeholder="Your name" className="p-3 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900" />
-        <input name="email" value={state.email} onChange={handleChange} placeholder="Email" className="p-3 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900" />
-      </div>
-      <textarea name="message" value={state.message} onChange={handleChange} rows={5} placeholder="Message" className="w-full p-3 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900" />
-      <div className="flex items-center gap-3">
-        <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Send Message</button>
-        <span className="text-sm text-gray-600 dark:text-gray-400">{status}</span>
-      </div>
-    </form>
-  );
-}
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
